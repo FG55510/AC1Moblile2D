@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Events;
 
-enum ModosdeJogo
+public enum ModosdeJogo
 {
     ControlandoCamera,
     ControlandoItens
@@ -10,7 +12,15 @@ enum ModosdeJogo
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private ModosdeJogo modo;
+
+    [SerializeField] private MoveCamera Camera;
+
+    [SerializeField] private PinchZoom2D zoom;
+
+    public UnityEvent Desassociarbixinhos;
+
+
     void Start()
     {
         
@@ -21,4 +31,25 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+
+    public void MudarMododeJogo(ModosdeJogo novomodo)
+    {
+
+        switch (novomodo){
+            case ModosdeJogo.ControlandoCamera:
+                Desassociarbixinhos.Invoke();
+                Camera.enabled= true;
+                zoom.enabled = true;
+                break;
+
+            case ModosdeJogo.ControlandoItens:
+                Camera.enabled = false;
+                zoom.enabled = false;
+                break;
+        }
+        
+            
+    }
+
 }
