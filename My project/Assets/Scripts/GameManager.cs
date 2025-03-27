@@ -12,18 +12,42 @@ public enum ModosdeJogo
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
+    void Awake()
+    {
+        if (!Instance)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    private UIManager ui;
+
+
     [SerializeField] private ModosdeJogo modo;
 
-    [SerializeField] private MoveCamera Camera;
+    [SerializeField] private MoveCamera cameramove;
 
     [SerializeField] private PinchZoom2D zoom;
+
+    [SerializeField] private CirculodeInfluenciadoPlayer circulo;
 
     public UnityEvent Desassociarbixinhos;
 
 
     void Start()
     {
-        
+        circulo = GetComponent<CirculodeInfluenciadoPlayer>();
+        ui = FindAnyObjectByType<UIManager>();
+        cameramove = FindAnyObjectByType<MoveCamera>();
+        zoom = FindAnyObjectByType<PinchZoom2D>();
+
+        ModoCamera();
+
     }
 
     // Update is called once per frame
@@ -33,22 +57,30 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void ModoCamera()
+    {
+        MudarMododeJogo(ModosdeJogo.ControlandoCamera);
+    }
+
+
     public void MudarMododeJogo(ModosdeJogo novomodo)
     {
 
         switch (novomodo){
             case ModosdeJogo.ControlandoCamera:
                 Desassociarbixinhos.Invoke();
-                Camera.enabled= true;
+                cameramove.enabled= true;
                 zoom.enabled = true;
+                circulo.enabled = true;
                 break;
 
             case ModosdeJogo.ControlandoItens:
-                Camera.enabled = false;
+                cameramove.enabled = false;
                 zoom.enabled = false;
+                circulo.enabled = false;
                 break;
         }
-        
+        modo = novomodo;
             
     }
 

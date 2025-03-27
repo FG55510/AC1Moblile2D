@@ -14,6 +14,7 @@ public class GhostStateMachine : MonoBehaviour
     {
         Isbeingcontrolled = false;
         move = GetComponent<GhostsMoviment>();
+        GameManager.Instance.Desassociarbixinhos.AddListener(DesativarControle);
     }
 
     // Update is called once per frame
@@ -34,7 +35,13 @@ public class GhostStateMachine : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Isbeingcontrolled = true;
+            GameManager.Instance.MudarMododeJogo(ModosdeJogo.ControlandoItens);
         }
         
+    }
+
+    private void DesativarControle()
+    {
+        Isbeingcontrolled = false;
     }
 }
