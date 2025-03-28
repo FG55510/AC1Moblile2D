@@ -55514,7 +55514,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 6
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -57355,12 +57355,12 @@ Tilemap:
     m_Data: {fileID: 1953424252, guid: ed4edcc13cc60764181cc25a7679faf6, type: 3}
   - m_RefCount: 73
     m_Data: {fileID: 739757935, guid: ed4edcc13cc60764181cc25a7679faf6, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1817797080, guid: ed4edcc13cc60764181cc25a7679faf6, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 880301966, guid: ed4edcc13cc60764181cc25a7679faf6, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 880301966, guid: ed4edcc13cc60764181cc25a7679faf6, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1817797080, guid: ed4edcc13cc60764181cc25a7679faf6, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 849161538, guid: ed4edcc13cc60764181cc25a7679faf6, type: 3}
   - m_RefCount: 1
@@ -60625,7 +60625,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "As vezes, precisamos dar 2 passos para tr\xE1s para dar 1 passo para cima..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 22df78dacf4166e4b8d406fadfc20009, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -60633,7 +60633,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -60689,7 +60689,7 @@ MonoBehaviour:
   m_margin: {x: -9.548248, y: -28.64476, z: -260.0503, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1404961188
@@ -60759,7 +60759,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Com a magia de apertar, segurar e arrastar, as trevas ir\xE3o embora."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 22df78dacf4166e4b8d406fadfc20009, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -60767,7 +60767,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -60823,7 +60823,7 @@ MonoBehaviour:
   m_margin: {x: -9.548248, y: -28.64476, z: -260.0503, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1467609566
