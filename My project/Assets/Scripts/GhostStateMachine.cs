@@ -44,4 +44,9 @@ public class GhostStateMachine : MonoBehaviour
     {
         Isbeingcontrolled = false;
     }
+
+    private void OnDestroy()
+    {
+        
+    }
 }

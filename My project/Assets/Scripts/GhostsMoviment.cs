@@ -15,6 +15,7 @@ public class GhostsMoviment : MonoBehaviour
     {
        // anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        joystick = FindAnyObjectByType<Joystick>();
     }
 
     void Update()
