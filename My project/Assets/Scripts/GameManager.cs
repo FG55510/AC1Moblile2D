@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
         faseatual = SceneManager.GetActiveScene();
 
         fantamasatual = fantamasnafase;
+        ui.Atualizarfantasmas(fantamasatual, fantamasparaconcluir);
     }
 
     public void Fantasmamorreu()
@@ -126,14 +127,14 @@ public class GameManager : MonoBehaviour
                 cameramove.enabled= true;
                 zoom.enabled = true;
                 // circulo.enabled = true;
-                ui.DesativarJoystick();
+               // ui.DesativarJoystick();
                 break;
 
             case ModosdeJogo.ControlandoItens:
                 cameramove.enabled = false;
                 zoom.enabled = false;
                 //  circulo.enabled = false;
-                ui.AtivarJoystick();
+              //  ui.AtivarJoystick();
                 break;
         }
         modo = novomodo;

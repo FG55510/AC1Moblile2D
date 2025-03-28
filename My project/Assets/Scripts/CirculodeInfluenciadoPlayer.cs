@@ -4,47 +4,59 @@ using UnityEngine;
 
 public class CirculodeInfluenciadoPlayer : MonoBehaviour
 {
-    public GameObject circlePrefab; // The circle GameObject to instantiate
-    public float growthSpeed = 2f;  // Speed at which the circle grows
-    public float maxSize = 3f;     // Maximum scale of the circle
-    public float minSize = 0.1f;   // Minimum scale of the circle
+    private float touchStartTime = 0f;
+    private bool isLongTap = false;
+    public float longTapDuration = 2f; // Tempo para considerar um long tap (5s)
 
+    public GameObject circlePrefab;
+    public float growthSpeed = 2f;
+    public float maxSize = 3f;
+    public float minSize = 0.1f;
     private GameObject currentCircle;
-    private bool isPressing = false;
-    private Vector2 pressPosition;
+    public bool growcircle;
+
 
     void Update()
     {
-        // Detecting long press using mouse or touch input
-        if (Input.GetMouseButton(0)) // For touch or mouse press
+        if (Input.touchCount > 0)
         {
-            if (!isPressing)
-            {
-                // Start press, instantiate a new circle at the press position
-                isPressing = true;
-                pressPosition = Input.mousePosition;
+            Touch touch = Input.GetTouch(0);
 
-                // Convert screen position to world position
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(pressPosition.x, pressPosition.y, Camera.main.nearClipPlane));
-                worldPosition.z = 0f; // Ensure the circle is on the correct plane (2D)
+            if (touch.phase == TouchPhase.Began)
+            {
+                touchStartTime = Time.time; // Marca o tempo inicial do toque
+                isLongTap = true;
+            }
+            else if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+            {
+                // Se o toque durar mais do que longTapDuration, aciona o evento
+                if (isLongTap && (Time.time - touchStartTime >= longTapDuration))
+                {
 
-                currentCircle = Instantiate(circlePrefab, worldPosition, Quaternion.identity); // Create circle at touch position
-                currentCircle.transform.localScale = new Vector3(minSize, minSize, 1); // Initial scale of the circle
+                    isLongTap = false; // Evita que seja chamado várias vezes
+                    if (!growcircle)
+                    {
+                        Vector3 touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, Camera.main.nearClipPlane));
+                        touchPosition.z = 0; // Garante que o círculo esteja na mesma camada do plano onde você deseja que ele apareça
+                        currentCircle = Instantiate(circlePrefab, touchPosition, Quaternion.identity); // Create circle at touch position
+                        currentCircle.transform.localScale = new Vector3(minSize, minSize, 1); // Initial scale of the circle
+                        growcircle = true;
+                    }
+                }
+                
+                if (growcircle)
+                {
+                    // Grow the circle
+                    float size = Mathf.Min(currentCircle.transform.localScale.x + growthSpeed * Time.deltaTime, maxSize);
+                    currentCircle.transform.localScale = new Vector3(size, size, 1);
+                }
             }
-            else
+            else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
             {
-                // Grow the circle
-                float size = Mathf.Min(currentCircle.transform.localScale.x + growthSpeed * Time.deltaTime, maxSize);
-                currentCircle.transform.localScale = new Vector3(size, size, 1);
-            }
-        }
-        else
-        {
-            if (isPressing)
-            {
-                // Reset circle when press ends
-                isPressing = false;
-                Destroy(currentCircle); // Destroy the current circle when the press ends
+                growcircle = false;
+                Destroy(currentCircle);
+                // Resetamos o temporizador se o toque for interrompido antes dos 5s
+                isLongTap = false;
             }
         }
     }
