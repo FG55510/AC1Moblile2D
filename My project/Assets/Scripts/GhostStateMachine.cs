@@ -8,13 +8,19 @@ public class GhostStateMachine : MonoBehaviour
 
     public bool Isbeingcontrolled;
 
-    
+    public Sprite fantasma;
+    private SpriteRenderer spriteRenderer;
+
+    public bool efantasma;
+
+
     // Start is called before the first frame update
     void Start()
     {
         Isbeingcontrolled = false;
         move = GetComponent<GhostsMoviment>();
         GameManager.Instance.Desassociarbixinhos.AddListener(DesativarControle);
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -36,6 +42,11 @@ public class GhostStateMachine : MonoBehaviour
         {
             Isbeingcontrolled = true;
             GameManager.Instance.MudarMododeJogo(ModosdeJogo.ControlandoItens);
+            if (efantasma)
+            {
+                spriteRenderer.sprite = fantasma;
+            }
+            
         }
         
     }

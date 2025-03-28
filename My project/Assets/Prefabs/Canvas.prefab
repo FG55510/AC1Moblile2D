@@ -280,7 +280,6 @@ GameObject:
   - component: {fileID: 1990123154714653036}
   - component: {fileID: 137267067779544022}
   - component: {fileID: 6277779856030706842}
-  - component: {fileID: 2654439701631661271}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -376,25 +375,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2654439701631661271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2629993170993724098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e48cd879a49791469663a6bbad934f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TMPfantasmas: {fileID: 1611205054134165802}
-  TMPpontos: {fileID: 0}
-  TMPResultadofase: {fileID: 7107450804372043198}
-  Retryfase: {fileID: 4024915773459978287}
-  Nextfase: {fileID: 4837752052287706152}
-  joystick: {fileID: 0}
-  exitcontrol: {fileID: 8319480336510953965}
 --- !u!1 &3792479312335381163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,6 +1319,30 @@ PrefabInstance:
     - target: {fileID: 8170153791668043269, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_Name
       value: Floating Joystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153791961219459, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153791961219459, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153791961219459, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153792821263252, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153792821263252, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170153792821263252, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8170153792821263258, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_LocalScale.x

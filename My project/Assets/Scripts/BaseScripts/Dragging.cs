@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Dragging : MonoBehaviour
 {
     private bool isDragging = false;
+
+    public LayerMask Void;
 
     void Update()
     {
@@ -17,11 +20,12 @@ public class Dragging : MonoBehaviour
             {
                 case UnityEngine.TouchPhase.Began:
                     // Raycast2D para verificar se tocou no objeto
-                    RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero);
+                    RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero, 1000f, Void);
 
                     if (hit.collider != null && hit.transform == transform) // Se tocou no objeto
                     {
                         isDragging = true;
+                        hit.collider.enabled = false;
                     }
                     break;
 

@@ -16,9 +16,9 @@ public class UIManager : MonoBehaviour
 
     public Button Nextfase;
 
-    public Joystick joystick;
+   // public Joystick joystick;
 
-    public Button exitcontrol;
+   // public Button exitcontrol;
 
     // Start is called before the first frame update
     void Start()
