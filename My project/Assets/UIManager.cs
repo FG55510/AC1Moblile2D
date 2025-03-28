@@ -28,11 +28,11 @@ public class UIManager : MonoBehaviour
         Retryfase.gameObject.SetActive(false);
         Nextfase.gameObject.SetActive(false);
 
-        joystick = FindAnyObjectByType<Joystick>();
-        joystick.gameObject.SetActive(false);
-        exitcontrol.gameObject.SetActive(false);
+       // joystick = FindAnyObjectByType<Joystick>();
+     //   joystick.gameObject.SetActive(false);
+     //   exitcontrol.gameObject.SetActive(false);
     }
- 
+ /*
     public void AtivarJoystick()
     {
         joystick.gameObject.SetActive(true);
@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
     {
         joystick.gameObject.SetActive(false);
         exitcontrol.gameObject.SetActive(false);
-    }
+    }*/
 
     public void Gameover()
     {
