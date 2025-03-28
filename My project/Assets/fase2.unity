@@ -60623,7 +60623,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "As vezes, precisamos dar 2 passos para tr\xE1s para dar 1 passo para cima..."
+  m_text: As vezes, precisamos dar 2 passos para tras para dar 1 passo para cima...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 22df78dacf4166e4b8d406fadfc20009, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -60757,7 +60757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Com a magia de apertar, segurar e arrastar, as trevas ir\xE3o embora."
+  m_text: Com a magia de apertar, segurar e arrastar, as trevas irao embora.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 22df78dacf4166e4b8d406fadfc20009, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
